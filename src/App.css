@@ -1,0 +1,312 @@
+:root {
+  --primary-color: #3b82f6;
+  --secondary-color: #10b981;
+  --background-color: #f8fafc;
+  --text-color: #1e293b;
+  --border-color: #e2e8f0;
+  --card-background: #ffffff;
+  --solana-color: #9945ff;
+  --ethereum-color: #627eea;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: var(--text-color);
+  background-color: var(--background-color);
+  line-height: 1.5;
+}
+
+.app-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  margin-bottom: 2rem;
+}
+
+h1 {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+main {
+  flex: 1;
+  background-color: var(--card-background);
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 0.875rem;
+  color: #64748b;
+  padding: 1rem 0;
+}
+
+/* Navigation */
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.tabs {
+  display: flex;
+  gap: 1rem;
+}
+
+.tab {
+  padding: 0.5rem 1rem;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-weight: 500;
+  color: #64748b;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s;
+}
+
+.tab.active {
+  color: var(--primary-color);
+  border-bottom: 2px solid var(--primary-color);
+}
+
+.auth-section {
+  display: flex;
+  align-items: center;
+}
+
+.login-button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.login-button:hover {
+  background-color: #2563eb;
+}
+
+.login-button:disabled {
+  background-color: #93c5fd;
+  cursor: not-allowed;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Profile Page */
+.profile-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.profile-info {
+  display: flex;
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.avatar img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.avatar-placeholder {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+
+.user-details h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+}
+
+.user-details p {
+  margin-bottom: 0.5rem;
+  color: #64748b;
+}
+
+.logout-button {
+  background-color: #f1f5f9;
+  color: #64748b;
+  border: 1px solid var(--border-color);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.logout-button:hover {
+  background-color: #e2e8f0;
+}
+
+.disconnect-button {
+  background-color: #f1f5f9;
+  color: #64748b;
+  border: 1px solid var(--border-color);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s;
+  margin-top: 1.5rem;
+  width: 100%;
+}
+
+.disconnect-button:hover {
+  background-color: #e2e8f0;
+}
+
+/* Web3 Page */
+.web3-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.crypto-selector {
+  display: flex;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.crypto-selector button {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border-color);
+  background-color: #f8fafc;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.crypto-selector button.active {
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+  background-color: rgba(59, 130, 246, 0.1);
+}
+
+.crypto-selector button:first-child.active {
+  border-color: var(--solana-color);
+  color: var(--solana-color);
+  background-color: rgba(153, 69, 255, 0.1);
+}
+
+.crypto-selector button:last-child.active {
+  border-color: var(--ethereum-color);
+  color: var(--ethereum-color);
+  background-color: rgba(98, 126, 234, 0.1);
+}
+
+.connect-wallet {
+  margin: 2rem 0;
+  text-align: center;
+  padding: 2rem;
+  border: 1px dashed var(--border-color);
+  border-radius: 8px;
+}
+
+.connect-wallet p {
+  margin-bottom: 1rem;
+  color: #64748b;
+}
+
+.connect-wallet button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.connect-wallet button:hover {
+  background-color: #2563eb;
+}
+
+.connect-wallet button:disabled {
+  background-color: #93c5fd;
+  cursor: not-allowed;
+}
+
+.tip-jar {
+  margin: 2rem 0;
+}
+
+.amount-input {
+  margin-bottom: 1.5rem;
+}
+
+.amount-input label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.amount-input input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.qr-code-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background-color: #f8fafc;
+}
+
+.qr-code-container h3 {
+  margin-bottom: 1.5rem;
+  color: var(--text-color);
+}
+
+.address {
+  margin-top: 1rem;
+  font-size: 0.875rem;
+  word-break: break-all;
+  text-align: center;
+  color: #64748b;
+}
